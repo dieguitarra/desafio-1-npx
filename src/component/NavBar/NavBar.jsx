@@ -1,4 +1,3 @@
-//import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";//trae toda la libreria
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
