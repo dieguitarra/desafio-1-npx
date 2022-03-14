@@ -1,45 +1,35 @@
-import React from "react";
-import { useState } from "react";
+import { React, useState } from "react";
 
-function ItemCount({ stock, initial, onAdd }) {
+const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
-
-  function handleIncrease() {
+  const sumar = () => {
     if (count < stock) {
       setCount(count + 1);
     }
-  }
-  function handleDecrease() {
+  };
+  const restar = () => {
     if (count > initial) {
       setCount(count - 1);
     }
-  }
-  const add = () => {
-    console.log(count);
   };
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col-1">
-          <div className="row">
-            <div className="d-flex justify-content-around col-1">
-              <button className="btn-sm btn-succes" onClick={handleDecrease}>
-                -
-              </button>
 
-              <button className="btn-sm btn-succes" onClick={handleIncrease}>
-                +
-              </button>
-            </div>
-            <div>className="mt-5 col-1</div>
-            <button className="btn btn-outline-success" onClick={add}>
-              Agregar al carrito
-            </button>
-          </div>
-        </div>
+  return (
+    <>
+      <div className="mt-2 mb-2">
+        <button className="btn btn-secondary" onClick={restar}>
+          -
+        </button>
+        <span className="mx-2">{count}</span>
+        <button className="btn btn-primary" onClick={sumar}>
+          +
+        </button>
       </div>
-    </div>
+      <button className="btn btn-outline-primary" onClick={onAdd}>
+        {" "}
+        Agregar al carrito
+      </button>
+    </>
   );
-}
+};
 
 export default ItemCount;

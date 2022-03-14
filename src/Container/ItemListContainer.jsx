@@ -1,7 +1,13 @@
-import { useEffect, useState } from "react";
+import React from "react";
+import ItemList from "./itemList";
 
-function ItemListContainer({ saludo }) {
-  return <div>{saludo}</div>;
-}
+const ItemListContainer = ({ titulo, card }) => {
+  return (
+    <div>
+      <h1>{titulo}</h1>
+      <ItemList card={card} />
+    </div>
+  );
+};
 
 export default ItemListContainer;
