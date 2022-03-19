@@ -1,13 +1,42 @@
-import React from "react";
-import ItemList from "./itemList";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemCount from "../component/ItemCount/ItemCount";
+import ItemList from "../component/ItemList/itemList";
+import { getFetch } from "../helpers/gFetch";
 
-const ItemListContainer = ({ titulo, card }) => {
+function ItemListContiner({ saludo }) {
+  const [bool, setBool] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [prods, setProds] = useState([]);
+  //console.log(task)
+  const { id } = useParams();
+
+  useEffect(() => {
+    if (id) {
+      getFetch
+        .then((resp) => setProds(resp.filter((prod) => prod.categoria === id)))
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    } else {
+      getFetch
+        .then((resp) => setProds(resp))
+        .catch((err) => console.log(err))
+        .finally(() => setLoading(false));
+    }
+  }, [id]);
+
+  const onAdd = (cant) => {
+    console.log(cant);
+  };
+
+  console.log(id);
   return (
-    <div>
-      <h1>{titulo}</h1>
-      <ItemList card={card} />
-    </div>
+    <>
+      <div>{saludo}</div>
+      {loading ? <h2>Cargando...</h2> : <ItemList prods={prods} />}
+      <ItemCount initial={1} stock={5} onAdd={onAdd} />
+    </>
   );
-};
+}
 
-export default ItemListContainer;
+export default ItemListContiner;

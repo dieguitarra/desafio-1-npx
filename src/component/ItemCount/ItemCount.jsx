@@ -8,14 +8,16 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     }
   };
   const restar = () => {
-    if (count > initial) {
+    if (count > 0) {
       setCount(count - 1);
     }
   };
-
+  const agregar = () => {
+    onAdd(count);
+  };
   return (
     <>
-      <div className="mt-2 mb-2">
+      <div className="py-3">
         <button className="btn btn-secondary" onClick={restar}>
           -
         </button>
@@ -24,8 +26,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
           +
         </button>
       </div>
-      <button className="btn btn-outline-primary" onClick={onAdd}>
-        {" "}
+      <button className="btn btn-outline-primary mb-3" onClick={agregar}>
         Agregar al carrito
       </button>
     </>
