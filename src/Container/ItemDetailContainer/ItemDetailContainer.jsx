@@ -15,7 +15,7 @@ function ItemDetailContianer() {
   }, []);
 
   return (
-    <div>
+    <div className="border border-danger border-3">
       <ItemDetail producto={producto} />
     </div>
   );

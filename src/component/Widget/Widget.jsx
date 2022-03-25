@@ -6,7 +6,7 @@ import {} from "@fortawesome/free-brands-svg-icons";
 function Widget() {
   return (
     <>
-      <FontAwesomeIcon icon={faCartShopping} />
+      <FontAwesomeIcon icon={faCartShopping} className="link" />
     </>
   );
 }
