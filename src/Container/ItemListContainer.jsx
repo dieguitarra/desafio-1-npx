@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import ItemCount from "../component/ItemCount/ItemCount";
 import ItemList from "../component/ItemList/itemList";
 import { getFetch } from "../helpers/gFetch";
-
+import { doc, getFirestrore } from "firebase/firestore";
 function ItemListContiner({ saludo }) {
   const [bool, setBool] = useState(true);
   const [loading, setLoading] = useState(true);
@@ -24,6 +24,11 @@ function ItemListContiner({ saludo }) {
         .finally(() => setLoading(false));
     }
   }, [id]);
+  //   }, [id]);
+  // useEffect(() => {
+  //   const db = getFirestrore();
+  //   const queryDoc = doc(db, "items", "");
+  // }, [id]);
 
   const onAdd = (cant) => {
     console.log(cant);

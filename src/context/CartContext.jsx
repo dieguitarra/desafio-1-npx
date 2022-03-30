@@ -7,8 +7,13 @@ function CartContextProvider({ children }) {
   const [cartList, setcartList] = useState([]);
 
   const addToCart = (item) => {
-    // repita duplicado
-    setcartList([...cartList, item]);
+    const foundInstrumento = cartList.find((prod) => prod.name === prod.name);
+    if (foundInstrumento) {
+      foundInstrumento.cantidad += 1;
+      setcartList([...cartList]);
+    } else {
+      setcartList([...cartList, item]);
+    }
   };
   const vaciarCarrito = () => {
     setcartList([]);

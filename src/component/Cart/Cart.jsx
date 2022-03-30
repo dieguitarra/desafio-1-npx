@@ -8,7 +8,7 @@ function Cart() {
     <div>
       {cartList.map((prod) => (
         <li key={prod.id}>
-          nombre:{prod.name}precio:{prod.price} cantidad:{prod.cantidad}
+          Nombre: {prod.name}, Precio: {prod.price}, Cantidad: {prod.cantidad}
         </li>
       ))}
       <button onClick={vaciarCarrito}>Vaciar carrito</button>
