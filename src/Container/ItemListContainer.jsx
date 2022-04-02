@@ -44,15 +44,19 @@ function ItemListContiner({ saludo }) {
   // }, [id])
 
   // trae toda la collección que tenemos
-  // useEffect(()=> {
-  //     const db = getFirestore()
+  // useEffect(() => {
+  //   const db = getFirestore();
 
-  //     const queryCollection =  collection(db, 'items' )
-  //     getDocs(queryCollection)
-  //     .then(resp => setProds( resp.docs.map(producto =>( {id: producto.id, ...producto.data()}) ) ) )
-  //     .catch(err => console.log(err))
-  //     .finally(()=> setLoading(false))
-  // }, [id])
+  //   const queryCollection = collection(db, "items");
+  //   getDocs(queryCollection)
+  //     .then((resp) =>
+  //       setProds(
+  //         resp.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
+  //       )
+  //     )
+  //     .catch((err) => console.log(err))
+  //     .finally(() => setLoading(false));
+  // }, [id]);
 
   // traer productos filtrados por categorías
   // useEffect(() => {

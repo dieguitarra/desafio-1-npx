@@ -1,23 +1,41 @@
 import { createContext, useContext, useState } from "react";
-import ItemCount from "../component/ItemCount/ItemCount";
 
 const CartContext = createContext([]);
 export const useCartContext = () => useContext(CartContext);
 
 function CartContextProvider({ children }) {
-  const [cartList, setcartList] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
-  const addToCart = (item) => {
-    const foundInstrumento = cartList.find((prod) => prod.name === prod.name);
-    if (foundInstrumento) {
-      foundInstrumento.cantidad += 1;
-      setcartList([...cartList]);
+  function addToCart(item) {
+    if (isInCart(item.id)) {
+      const prod = cartList.find((p) => p.id === item.id);
+      const { cantidad } = prod;
+
+      prod.cantidad = item.cantidad + cantidad;
+      const newCart = [...cartList];
+      setCartList(newCart);
     } else {
-      setcartList([...cartList, item]);
+      setCartList([...cartList, item]);
     }
-  };
+  }
   const vaciarCarrito = () => {
-    setcartList([]);
+    setCartList([]);
+  };
+  const isInCart = (id) => {
+    //devuelve un booleano
+    return cartList.some((prod) => prod.id === id);
+  };
+  const deleteOne = (id) => {
+    setCartList(cartList.filter((prod) => prod.id !== id));
+  };
+  const sumaTotal = () => {
+    return cartList.reduce(
+      (acum, prod) => (acum += prod.price * prod.cantidad),
+      0
+    );
+  };
+  const cantidad = () => {
+    return cartList.reduce((acum, prod) => (acum += prod.cantidad), 0);
   };
   return (
     <CartContext.Provider
@@ -25,6 +43,9 @@ function CartContextProvider({ children }) {
         cartList,
         addToCart,
         vaciarCarrito,
+        deleteOne,
+        sumaTotal,
+        cantidad,
       }}
     >
       {children}
