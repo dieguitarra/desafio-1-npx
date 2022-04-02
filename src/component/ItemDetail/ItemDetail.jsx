@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { Input } from "../../Input";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
-function ItemDetail({ producto }) {
+function ItemDetail({ producto, loading, setLoading }) {
   const [comprar, setComprar] = useState(false);
   const [count, setCount] = useState(1);
   const { addToCart } = useCartContext();
@@ -12,6 +12,7 @@ function ItemDetail({ producto }) {
     console.log(cant);
     addToCart({ ...producto, cantidad: cant });
     setComprar(true);
+    setLoading(false);
   };
   // console.log(cartList);
   return (

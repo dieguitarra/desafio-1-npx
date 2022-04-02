@@ -40,7 +40,7 @@ const CartWidget = () => {
 
       {cartList.length >= 1 && (
         <div>
-          <h4> Total de la compra: `${sumaTotal()}` </h4>
+          <h4> Total de la compra: ${sumaTotal()} </h4>
           <button className="btn btn-danger" onClick={vaciarCarrito}>
             Vaciar carrito
           </button>
