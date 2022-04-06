@@ -16,13 +16,13 @@ function NavBar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="categoria/guitarras" className={"mx-1 link"}>
+              <NavLink to="/categoria/guitarras" className={"mx-1 link"}>
                 Guitarras
               </NavLink>
-              <NavLink to="categoria/bajos" className={"mx-1 link"}>
+              <NavLink to="/categoria/bajos" className={"mx-1 link"}>
                 Bajos
               </NavLink>
-              <NavLink to="categoria/pianos" className={"mx-1 link"}>
+              <NavLink to="/categoria/pianos" className={"mx-1 link"}>
                 Pianos
               </NavLink>
             </Nav>

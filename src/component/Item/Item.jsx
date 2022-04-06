@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Item({ prod }) {
   return (
-    <Link to={`detalle/${prod.id}`}>
+    <Link to={`/detalle/${prod.id}`} className="text-decoration-none text-dark">
       <div
         // key={prod.id}
         className="col-md-4 mx-auto text-decoration-none"
@@ -13,7 +13,7 @@ function Item({ prod }) {
           </div>
           <div className="card-body mx-auto">
             <img src={prod.foto} alt="" className="w-50" />
-            {prod.price}
+            {prod.price}$
           </div>
           <div className="card-footer text-decoration-none">
             Calidad en instrumentos

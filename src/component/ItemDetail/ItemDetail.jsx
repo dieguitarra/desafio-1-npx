@@ -17,9 +17,9 @@ function ItemDetail({ producto, loading, setLoading }) {
   // console.log(cartList);
   return (
     <div>
-      <img src={producto.foto} alt="imagen" />
+      <img src={producto.foto} alt="imagen" className="w-25" />
       <p className="alert alert-primary w-25 mx-auto">{producto.name}</p>
-      <p className="alert alert-primary w-25 mx-auto">{producto.price}</p>
+      <p className="alert alert-primary w-25 mx-auto">{producto.price}$</p>
       <p className="alert alert-primary w-25 mx-auto">{producto.categoria}</p>
       {!comprar && (
         <ItemCount
