@@ -25,6 +25,9 @@ function NavBar() {
               <NavLink to="/categoria/pianos" className={"mx-1 link"}>
                 Pianos
               </NavLink>
+              <NavLink to="/categoria/baterias" className={"mx-1 link"}>
+                Baterías
+              </NavLink>
             </Nav>
             <Nav>
               <NavLink

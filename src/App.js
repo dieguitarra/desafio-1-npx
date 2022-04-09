@@ -21,11 +21,15 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<ItemListContainer saludo="hola soy ItemListContiner" />}
+              element={
+                <ItemListContainer saludo="Bienvenidos a Muscal World" />
+              }
             />
             <Route
               path="/categoria/:id"
-              element={<ItemListContainer saludo="hola soy ItemListContiner" />}
+              element={
+                <ItemListContainer saludo="Bienvenidos a Muscal World" />
+              }
             />
             <Route
               path="/detalle/:detalleId"

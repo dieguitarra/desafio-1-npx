@@ -45,6 +45,16 @@ const productos = [
     description: "Piano Yamaha hecho en EEUU, en el año 2016",
     foto: "/imagenes/yamaha.jpg",
   },
+  {
+    id: "6",
+    categoria: "baterias",
+    name: "Batería Saturn V Exotic 5 C Studio, H. Black, B22 X18 , Tt",
+    price: " 153.783$",
+    stock: 5,
+    description:
+      "Batería SATURN V Exotic 5 c Studio, H. Black, B22 x18, TT10 x8 /12 x9 , TF16 /14 , Cherry Mist Maple Burl",
+    foto: "imagenes/bateriaRoja.jpg",
+  },
 ];
 export const getFetch = new Promise((resolve, reject) => {
   //acciones
