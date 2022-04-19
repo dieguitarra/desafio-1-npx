@@ -21,9 +21,7 @@ const CartWidget = () => {
       const id = cartItem.id;
       const name = cartItem.name;
       const price = cartItem.price * cartItem.amount;
-      if (dataForm === "") {
-        alert("los campos estan vacios");
-      }
+
       return { id, name, price };
     });
 
