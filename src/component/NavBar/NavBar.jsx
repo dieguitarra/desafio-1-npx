@@ -8,7 +8,13 @@ import "./NavBar.css";
 function NavBar() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        className="sticky-top"
+      >
         <Container>
           <NavLink to="/" className={"mx-1 link"}>
             Musical World
@@ -16,23 +22,24 @@ function NavBar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/categoria/guitarras" className={"mx-1 link"}>
+              <NavLink to="/categoria/Guitarras" className={"mx-1 link"}>
                 Guitarras
               </NavLink>
-              <NavLink to="/categoria/bajos" className={"mx-1 link"}>
+              <NavLink to="/categoria/Bajos" className={"mx-1 link"}>
                 Bajos
               </NavLink>
-              <NavLink to="/categoria/pianos" className={"mx-1 link"}>
+              <NavLink to="/categoria/Pianos" className={"mx-1 link"}>
                 Pianos
               </NavLink>
-              <NavLink to="/categoria/baterias" className={"mx-1 link"}>
+              <NavLink to="/categoria/Baterias" className={"mx-1 link"}>
                 Baterías
               </NavLink>
             </Nav>
             <Nav>
               <NavLink
                 to="/cart"
-                className={({ isActive }) => (isActive ? "active" : "")}
+                //className={({ isActive }) => (isActive ? "active" : "inactive")}
+                className="link"
               >
                 <Widget />
               </NavLink>

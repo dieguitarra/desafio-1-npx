@@ -54,56 +54,14 @@ function ItemListContiner({ saludo }) {
     getAll();
   }, [id]);
 
-  // trae un documento
-  // useEffect(()=> {
-  //     const db = getFirestore()
-
-  //     const queryDoc = doc(db, 'items', 'OFnvgi8PYvV0VJOFwzQ6')
-  //     getDoc(queryDoc)
-  //     .then(resp => setProd( {id: resp.id, ...resp.data()} ))
-  // }, [id])
-
-  // trae toda la collección que tenemos
-  // useEffect(() => {
-  //   const db = getFirestore();
-
-  //   const queryCollection = collection(db, "items");
-  //   getDocs(queryCollection)
-  //     .then((resp) =>
-  //       setProds(
-  //         resp.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
-  //       )
-  //     )
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setLoading(false));
-  // }, [id]);
-
-  // traer productos filtrados por categorías
-  // useEffect(() => {
-  //   const db = getFirestore();
-
-  //   const queryCollection = collection(db, "items");
-  //   const queryFilter = query(
-  //     queryCollection,
-  //     // where('categoria','==','remeras'),
-  //     where("price", ">=", 1000),
-  //     limit(1)
-  //   );
-  //   getDocs(queryFilter)
-  //     .then((resp) =>
-  //       setProds(
-  //         resp.docs.map((producto) => ({ id: producto.id, ...producto.data() }))
-  //       )
-  //     )
-  //     .catch((err) => console.log(err))
-  //     .finally(() => setLoading(false));
-  // }, [id]);
-
-  //  console.log(prods);
   return (
     <>
       <div>{saludo}</div>
-      {loading ? <h2>Cargando...</h2> : <ItemList prods={prods} />}
+      {loading ? (
+        <h2 className="mt-4">Cargando...</h2>
+      ) : (
+        <ItemList prods={prods} />
+      )}
     </>
   );
 }

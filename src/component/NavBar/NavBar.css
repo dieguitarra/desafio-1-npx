@@ -2,3 +2,9 @@
   text-decoration: none;
   color: white;
 }
+.active {
+  color: red;
+}
+.inactive {
+  color: white;
+}

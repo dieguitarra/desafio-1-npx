@@ -18,13 +18,15 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   return (
     <>
       <div className="py-3">
-        <button className="btn btn-secondary" onClick={restar}>
-          -
-        </button>
-        <span className="mx-2">{count}</span>
-        <button className="btn btn-primary" onClick={sumar}>
-          +
-        </button>
+        <label className=" p-2 border border-1 rounded">
+          <button className="btn btn-secondary" onClick={restar}>
+            -
+          </button>
+          <span className="mx-2">{count}</span>
+          <button className="btn btn-primary" onClick={sumar}>
+            +
+          </button>
+        </label>
       </div>
       <button className="btn btn-outline-primary mb-3" onClick={agregar}>
         Agregar al carrito

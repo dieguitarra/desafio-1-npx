@@ -16,33 +16,58 @@ function ItemDetail({ producto, loading, setLoading }) {
   };
   // console.log(cartList);
   return (
-    <div>
-      <img src={producto.foto} alt="imagen" className="w-25" />
-      <p className="alert alert-primary w-25 mx-auto ">{producto.name}</p>
-      <p className="alert alert-primary w-25 mx-auto ">{producto.price}$</p>
-      <p className="alert alert-primary w-25 mx-auto ">{producto.categoria}</p>
-      {!comprar && (
-        <ItemCount
-          initial={1}
-          stock={5}
-          onAdd={onAdd}
-          count={count}
-          setCount={setCount}
-        />
-      )}
-      {comprar && (
-        <div>
-          <button className="btn btn-primary mx-2" onClick={() => navegar("/")}>
-            Seguir comprando
-          </button>
-          <button
-            className="btn btn-secondary"
-            onClick={() => navegar("/cart")}
-          >
-            Ir al carrito
-          </button>
+    <div className="py-5">
+      <h1>Detalle de tu producto</h1>
+      {
+        //style="max-width: 540px;">
+
+        <div className="card container mt-5">
+          <div className="row g-0">
+            <div className="col-12 col-md-4 d-flex align-items-center justify-content-center ">
+              <img
+                src={producto.foto}
+                className="img-fluid rounded-start w-75"
+                alt="imagen"
+              />
+            </div>
+            <div className="col-12 col-md-8 mt-5">
+              <div className="card-body px-5">
+                <h2 className="card-title mt-2">{producto.name}</h2>
+                <h6 className="card-text mt-5">{producto.description}</h6>
+                <div className="card-text">
+                  <h5 className="mt-5 mb-3">{producto.price}$</h5>
+                </div>
+
+                {!comprar && (
+                  <ItemCount
+                    initial={1}
+                    stock={5}
+                    onAdd={onAdd}
+                    count={count}
+                    setCount={setCount}
+                  />
+                )}
+                {comprar && (
+                  <div>
+                    <button
+                      className="btn btn-primary my-3 mx-2"
+                      onClick={() => navegar("/")}
+                    >
+                      Seguir comprando
+                    </button>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => navegar("/cart")}
+                    >
+                      Ir al carrito
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
-      )}
+      }
     </div>
   );
 }

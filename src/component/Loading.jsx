@@ -5,7 +5,7 @@ export const Loading = () => {
     <div className="container">
       <div className="row">
         <div className="d-flex justify-content-center">
-          <h1>Cargando ...</h1>
+          <h2 className="mt-4">Cargando...</h2>
         </div>
       </div>
     </div>
