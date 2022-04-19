@@ -18,17 +18,16 @@ function CartContextProvider({ children }) {
       setCartList([...cartList, item]);
     }
   }
-  const vaciarCarrito = () => {
+  const emptyCart = () => {
     setCartList([]);
   };
   const isInCart = (id) => {
-    //devuelve un booleano
     return cartList.some((prod) => prod.id === id);
   };
   const deleteOne = (id) => {
     setCartList(cartList.filter((prod) => prod.id !== id));
   };
-  const sumaTotal = () => {
+  const totalAmount = () => {
     return cartList.reduce(
       (acum, prod) => (acum += prod.price * prod.cantidad),
       0
@@ -42,9 +41,9 @@ function CartContextProvider({ children }) {
       value={{
         cartList,
         addToCart,
-        vaciarCarrito,
+        emptyCart,
         deleteOne,
-        sumaTotal,
+        totalAmount,
         cantidad,
       }}
     >

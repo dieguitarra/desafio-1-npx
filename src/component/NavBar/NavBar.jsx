@@ -22,16 +22,16 @@ function NavBar() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <NavLink to="/categoria/Guitarras" className={"mx-1 link"}>
+              <NavLink to="/category/Guitarras" className={"mx-1 link"}>
                 Guitarras
               </NavLink>
-              <NavLink to="/categoria/Bajos" className={"mx-1 link"}>
+              <NavLink to="/category/Bajos" className={"mx-1 link"}>
                 Bajos
               </NavLink>
-              <NavLink to="/categoria/Pianos" className={"mx-1 link"}>
+              <NavLink to="/category/Pianos" className={"mx-1 link"}>
                 Pianos
               </NavLink>
-              <NavLink to="/categoria/Baterias" className={"mx-1 link"}>
+              <NavLink to="/category/Baterías" className={"mx-1 link"}>
                 Baterías
               </NavLink>
             </Nav>
