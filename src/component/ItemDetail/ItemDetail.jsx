@@ -4,14 +4,14 @@ import { Input } from "../../Input";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
 function ItemDetail({ product, loading, setLoading }) {
-  const [comprar, setComprar] = useState(false);
+  const [buy, setBuy] = useState(false);
   const [count, setCount] = useState(1);
   const { addToCart } = useCartContext();
   const navegar = useNavigate();
   const onAdd = (cant) => {
     console.log(cant);
-    addToCart({ ...product, cantidad: cant });
-    setComprar(true);
+    addToCart({ ...product, amount: cant });
+    setBuy(true);
     setLoading(false);
   };
   // console.log(cartList);
@@ -38,7 +38,7 @@ function ItemDetail({ product, loading, setLoading }) {
                   <h5 className="mt-5 mb-3">{product.price}$</h5>
                 </div>
 
-                {!comprar && (
+                {!buy && (
                   <ItemCount
                     initial={1}
                     stock={5}
@@ -47,7 +47,7 @@ function ItemDetail({ product, loading, setLoading }) {
                     setCount={setCount}
                   />
                 )}
-                {comprar && (
+                {buy && (
                   <div>
                     <button
                       className="btn btn-primary my-3 mx-2"
