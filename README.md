@@ -1,3 +1,15 @@
+# Musical Wolrd
+
+En este proyecto utilicé: 
+
+**- Firebase (versión 9.6.10)** como back end.
+**-Bootstrap (versión 5.1.3)** para darle estilos.
+**- Bootstrap icons (versión 1.8.1)** para los iconos de: `Facebook, Instagram, Twitter y Youtube`.
+**-Font Awesome (versión react Font Awesome 0.1.17; free solid svg icons 6.0.0; free regular svg icons 6.0.0; free regular svg icons 6.0.0 y Font Awesome svg core 1.3.0)** para los iconos de: eliminar ítem y del carrito de compras.
+
+También utilicé  **npx create-react-app** para crear el proyecto, **npm run build** para utilizar `Netlify`, **npm install react-router-dom** para el ruteo del proyecto.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
