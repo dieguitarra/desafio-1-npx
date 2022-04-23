@@ -2,17 +2,8 @@ import Item from "../Item/Item";
 
 function ItemList({ prods }) {
   return (
-    <div
-      className="container"
-      // style={{
-      //   display: "flex",
-      //   flexDirection: "row",
-      //   flexWrap: "wrap",
-      //   alignContent: "center",
-      //   justifyContent: "center",
-      // }}
-    >
-      <div className="row">
+    <div className="container">
+      <div className=" d-flex flex-wrap flex-direction-row justify-content-center">
         {prods.map((prod) => (
           <Item key={prod.id} prod={prod} />
         ))}

@@ -1,32 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 function Footer() {
   return (
-    <footer className="text-white py-5 bg-dark mt-5 ">
-      <div className="container">
+    <footer className="text-white py-5 bg-dark mt-5 footerNoMargin">
+      <div className="container-fluid">
         <nav className="row">
           <Link
             to="/"
-            className="col-12 col-md-3 d-flex align-items-center justify-content-center"
+            className="col-12 col-md-3 d-flex align-items-start justify-content-center mt-3 mb-2"
           >
             <img
-              src="./imagenes/logo.jpg"
+              src="/imagenes/logo.jpg"
               className="rounded"
               alt="logo"
-              height={80}
-              width={80}
+              height={90}
+              width={120}
             ></img>
           </Link>
           <ul className="col-12 col-md-3 list-unstyled">
-            <li className="fw-bold mb-2 text-center fs-5">Musical Wolrd</li>
+            <li className="fw-bold mb-2 text-center fs-5 mt-3">
+              Musical Wolrd
+            </li>
             <li className="text-center">
               En este sitio web encontrarás todo lo que siempre soñaste al mejor
               precio.
             </li>
           </ul>
           <ul className="col-12 col-md-3 list-unstyled text-center ">
-            <li className="fw-bold mb-2 fs-5">Categorías</li>
+            <li className="fw-bold mb-2 fs-5 mt-2">Categorías</li>
 
             <li>
               <Link
@@ -54,7 +55,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                to="/category/Baterias"
+                to="/category/Baterías"
                 className="text-decoration-none text-reset"
               >
                 Baterías
@@ -63,7 +64,7 @@ function Footer() {
           </ul>
 
           <ul className="col-12 col-md-3 list-unstyled fs-5">
-            <li className="fw-bold mb-2 text-center">Síguenos</li>
+            <li className="fw-bold mb-2 text-center mt-3">Síguenos</li>
             <li className="text-center">
               <i className="bi bi-facebook mx-2" />
               <i className="bi bi-instagram mx-2" />

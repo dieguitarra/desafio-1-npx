@@ -7,10 +7,11 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import "./Cart.css";
 
-const CartWidget = () => {
+const Cart = () => {
   const [dataForm, setDataForm] = useState({ email: "", name: "", phone: "" });
   const [id, setId] = useState(null);
   const { cartList, deleteOne, totalAmount, emptyCart } = useCartContext();
+
   const generateOrder = async (e) => {
     e.preventDefault();
     let order = {};
@@ -43,6 +44,7 @@ const CartWidget = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   return (
     <div>
       <h1 className="text-center mt-5 mb-5">Tus productos</h1>
@@ -51,7 +53,7 @@ const CartWidget = () => {
         <div>
           <h4 className="mb-5">No hay items en tu carrito...</h4>
           <Link to="/">
-            <button className="btn btn-outline-primary mb-5">
+            <button className="btn btn-primary mb-5">
               Continuar comprando
             </button>
           </Link>
@@ -59,13 +61,13 @@ const CartWidget = () => {
       )}
       {id && (
         <label className={"alert alert-success"}>
-          El id de la compra es: {id}
+          El id de la compra es: <h6 className="m-2">{id}</h6>
         </label>
       )}
       {cartList.map((prod) => (
-        <div key={prod.id} className="row container mx-auto">
-          <hr />
-          <div className="col-sm-8 mt-3">
+        <div key={prod.id} className="row container mx-auto mb-4">
+          <hr className="container" />
+          <div className="col-sm-8 ">
             <img src={prod.photo} className="w-25" alt="imagen" />
             <h6 className="py-1">Nombre: {prod.name}</h6>
             <h6 className="py-1">Precio: {prod.price}$</h6>
@@ -74,10 +76,10 @@ const CartWidget = () => {
 
           <div className="col-sm-4 d-flex align-items-center justify-content-center">
             <button
-              className="btn btn-outline-danger"
+              className="btn btn-danger my-3"
               onClick={() => deleteOne(prod.id)}
             >
-              Eliminar <FontAwesomeIcon icon={faTrash} className="px-2" />
+              Eliminar <FontAwesomeIcon icon={faTrash} className="px-2 " />
             </button>
           </div>
         </div>
@@ -92,7 +94,7 @@ const CartWidget = () => {
 
           <form className="mt-5" onSubmit={generateOrder}>
             <hr className="container" />
-            <h3 className="mb-4 mt-4">
+            <h3 className="mb-5 mt-5">
               Completa tus datos para finalizar tu compra:
             </h3>
             <input
@@ -100,7 +102,7 @@ const CartWidget = () => {
               type="text"
               required
               name="name"
-              placeholder="Nombre"
+              placeholder="Ingrese su nombre"
               value={dataForm.name}
               onChange={handleChange}
             />
@@ -110,7 +112,7 @@ const CartWidget = () => {
               type="text"
               required
               name="phone"
-              placeholder="Teléfono"
+              placeholder="Ingrese su teléfono"
               value={dataForm.phone}
               onChange={handleChange}
             />
@@ -120,8 +122,8 @@ const CartWidget = () => {
               type="email"
               required
               name="email"
-              placeholder="Email"
-              value={dataForm.email}
+              placeholder="Ingrese su email"
+              value={dataForm.email1}
               onChange={handleChange}
             />
             <br />
@@ -130,8 +132,8 @@ const CartWidget = () => {
               type="email"
               required
               name="email1"
-              placeholder="Repita el email"
-              value={dataForm.email}
+              placeholder="Repita su email"
+              value={dataForm.email2}
               onChange={handleChange}
             />
             <br />
@@ -152,4 +154,4 @@ const CartWidget = () => {
   );
 };
 
-export default CartWidget;
+export default Cart;

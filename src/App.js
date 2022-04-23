@@ -20,7 +20,9 @@ function App() {
               element={
                 <ItemListContainer
                   greetings={
-                    <h1 className="mt-5 "> Bienvenidos a Muscal World </h1>
+                    <h2 className="py-2 bg-primary text-white">
+                      Bienvenidos a Musical World
+                    </h2>
                   }
                 />
               }
@@ -28,7 +30,13 @@ function App() {
             <Route
               path="/category/:id"
               element={
-                <ItemListContainer greetings={<h1 className="mt-5 ">{}</h1>} />
+                <ItemListContainer
+                  greetings={
+                    <h2 className="py-2 bg-primary text-white">
+                      Bienvenidos a Musical World
+                    </h2>
+                  }
+                />
               }
             />
             <Route path="/detail/:detailId" element={<ItemDetailContainer />} />

@@ -10,7 +10,6 @@ function CartContextProvider({ children }) {
     if (isInCart(item.id)) {
       const prod = cartList.find((p) => p.id === item.id);
       const { amount } = prod;
-
       prod.amount = item.amount + amount;
       const newCart = [...cartList];
       setCartList(newCart);

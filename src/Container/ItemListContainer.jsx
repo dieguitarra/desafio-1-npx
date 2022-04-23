@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-
 import ItemList from "../component/ItemList/itemList";
-
 import {
   collection,
   getDocs,
@@ -10,10 +8,10 @@ import {
   query,
   where,
 } from "firebase/firestore";
+
 function ItemListContiner({ greetings }) {
   const [loading, setLoading] = useState(true);
   const [prods, setProds] = useState([]);
-
   const { id } = useParams();
 
   useEffect(() => {
@@ -41,7 +39,10 @@ function ItemListContiner({ greetings }) {
     <>
       <div>{greetings}</div>
       {loading ? (
-        <h2 className="mt-4">Cargando...</h2>
+        <h2 className="mt-4">
+          Cargando...{" "}
+          <img src="/imagenes/loading.gif" height={120} width={120}></img>
+        </h2>
       ) : (
         <ItemList prods={prods} />
       )}

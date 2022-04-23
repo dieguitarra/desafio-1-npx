@@ -1,9 +1,8 @@
 import { useCartContext } from "../../context/CartContext";
-import { useContext, useState } from "react";
-import { Input } from "../../Input";
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
 import { useNavigate } from "react-router-dom";
-function ItemDetail({ product, loading, setLoading }) {
+function ItemDetail({ product, setLoading }) {
   const [buy, setBuy] = useState(false);
   const [count, setCount] = useState(1);
   const { addToCart } = useCartContext();
@@ -14,13 +13,10 @@ function ItemDetail({ product, loading, setLoading }) {
     setBuy(true);
     setLoading(false);
   };
-  // console.log(cartList);
   return (
     <div className="py-5">
       <h1>Detalle de tu producto</h1>
       {
-        //style="max-width: 540px;">
-
         <div className="card container mt-5">
           <div className="row g-0">
             <div className="col-12 col-md-4 d-flex align-items-center justify-content-center ">
@@ -56,7 +52,7 @@ function ItemDetail({ product, loading, setLoading }) {
                       Seguir comprando
                     </button>
                     <button
-                      className="btn btn-secondary"
+                      className="btn btn-success"
                       onClick={() => navegar("/cart")}
                     >
                       Ir al carrito
